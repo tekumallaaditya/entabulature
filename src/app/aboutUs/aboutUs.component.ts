@@ -1,4 +1,5 @@
 import{Component} from '@angular/Core';
+import {Router, ParamMap, ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -7,5 +8,10 @@ import{Component} from '@angular/Core';
 })
 
 export class AboutUsComponent{
+
+
+    constructor(private _router: Router){}
+
+    
 
 }
