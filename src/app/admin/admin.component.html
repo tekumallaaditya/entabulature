@@ -1,8 +1,47 @@
-<html>
+<html >
     <head>
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Abel|Open+Sans:400,600" rel="stylesheet" />
 
     </head>
-    <body>
-        <h1>This is admin login</h1>
+    <body style = "background-color:  #FFFACD !important;">
+        <div class="container" style="padding-top: 100px;">
+            <div class="col-md-4 col-md-offset-4 panel panel-default">
+                <h1>Admin Login</h1>
+                <form style=" margin: 40px 0;" #adminForm = "ngForm" novalidate (ngSubmit)= "adminLogin(adminForm)">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="icon-envelope"></span></span>
+                        <input type="email" name="adminEmail" required class="form-control"
+                        #adminEmail = "ngModel" [(ngModel)] = "email" placeholder="enter email">
+                        <div class="alert alert-danger" *ngIf= "adminEmail.touched && !adminEmail.valid">
+                            <div *ngIf = "adminEmail.errors.required">email is required</div>
+                        </div>
+                    </div><br>
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="icon-key"></span></span>
+                        <input type="password" name="adminPassword" required class="form-control"
+                        #adminPassword = "ngModel" [(ngModel)] = "password" placeholder="enter password">
+                        <div class="alert alert-danger" *ngIf= "adminPassword.touched && !adminPassword.valid">
+                            <div *ngIf = "adminPassword.errors.required">password is required</div>
+                        </div>
+                    </div><br>
+
+                    <button class="btn btn-primary btn-lg" type="Submit" [disabled] = "!adminForm.valid">Admin Login</button>
+
+                </form>
+                <div align="center">
+                    <a  routerLink="/home">Go to Home</a>
+                </div><br>
+            </div>
+
+        </div>
+
+        <!--JS and Jquery links Start-->
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!--JS and Jquery links Ends-->
     </body>
 </html>
