@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AboutUsComponent } from './aboutUs/aboutUs.component';
 import { adminComponent } from './admin/admin.component';
 import { adminServices } from './admin/admin.services';
+import { toastrService } from './toastrService';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { adminServices } from './admin/admin.services';
       {path: 'admin', component:adminComponent}
     ])
   ],
-  providers: [adminServices],
+  providers: [adminServices, toastrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
